@@ -1,0 +1,406 @@
+:root {
+    --primary-color: rgb(8, 166, 228);
+    --dark-blue: rgb(5, 135, 185);
+    --redish: rgb(251, 59, 100);
+    --green: rgb(85, 223, 180);
+    --black: rgb(0, 0, 0);
+    --grey-1: rgb(165, 165, 165);
+    --light-grey: rgb(247, 247, 247);
+    --white: rgb(255, 255, 255);
+}
+
+html, body {
+    font-size: 16px;
+}
+
+
+.container {
+
+}
+
+.header {
+    background-color: rgba(255, 255, 255, 0.6);                  /*kolor dla nava*/
+    position: relative;    /*ten position jest dlatego ze uzywamy z-index */
+    z-index: 10;          /*1 zeby działał z-index musimy dac position 2 nav byl schowany pod obraskiem dlatego wycignelismy nav'a wyzej */
+    box-shadow: 0px 0px 10px #aaaaaa;
+}
+/* stylowanie klasy wyzej do przycisków w menu*/
+.header .header__inner {
+    max-width: 84.5rem; /* 1352px to 84.5rem   -  szerosc strony max do 1352px*/
+    width: 100%;  /*  strona ma sie wyswietlac na 100% ekranu ale nie wiecej jak 1352px */
+    padding-inline: 1.25rem; /* inline padding to padding na lewy i prawy margines */
+    margin-inline: auto;  /* srodkowanie elementu */
+    display: flex;  /* dodajemy flexa na rodzicu  "header__inner" aby ustawic .menu ktore jest dziekiem tego znacznika + aby wszystko działało dodajemy 3 wartosci z flex fox justify-content: center;  align-items: center;  flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+/*byc moze bedzie trzeba dodać hajlainer do klasy logo */
+.logo {
+    display: flex;         /* display: flex; oraz align-items: center; - wyrownnie w pionie testow w navie menu */
+    align-items: center;
+    text-decoration: none;  /* wtłączenie podkreślenia w linku */
+}
+
+/* formatowanie textu w menu */
+.logo .logo__text {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-family: 'Raleway', 'Open Sans';
+    font-weight: 400;
+    margin-right:  0.3125rem;
+}
+
+.menu {
+    display: flex;  /* ukladamy w menu elementy obok siebie */
+}
+.menu .menu__item.menu_item--active, .menu .menu__item:hover {
+    background-color: var(--white);
+    border-bottom: .25rem solid var(--primary-color);       /*border dla nava*/
+}
+
+
+/* stylowanie textu dla przycisków w menu*/
+.menu .menu__item {
+    color: var(--black);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-family: 'Raleway', 'Open Sans';
+    font-weight: 700;
+    text-decoration: none;
+    min-width: 8rem;
+    text-align: center;
+    padding-top: 2.0625rem;
+    padding-bottom: 2.0625rem;
+    transition: all 200ms ease-in-out; /* parametry do animacji przyciskow w menu */
+}
+
+
+.banner {}
+
+.banner .banner__img {
+    background-size: cover;
+    background: url(../images/Baner.png) no-repeat center; /* to jest z short hand = alt+enter cztery prperty zapisane w jeden za pomocą skrotu */
+    min-height: 100vh; /* rosciąganie obrazka na wysokosc ekranu */
+    margin-top: -5.625rem; /* przesuwamy obraze wyzej o 90px czyli o szerokosc navbar
+                              na koncu pracy sprawdz faktyczną wysokosv menu aby wpisac tu faktyczną wysokosc teraz jest wartosc z wideo*/
+
+}
+.banner .banner__inner {
+    min-height: 100vh;    /*ukladamy dzieci w ktore wyswietlają sie inline w calej wysokosci ekranu, przegladarki*/
+    display: flex;         /*wlaczamy flex box na rodzicu + 3 wartisci nizej aby dzilac na dzieciach + 3 wartosci wymagane tj justify-content: center;  align-items: center;  flex-direction: column;*/
+    justify-content: center;  /*wwartosc do flexbox*/
+    align-items: center;          /*wwartosc do flexbox*/
+    flex-direction: column;  /*wwartosc do flexbox*/
+    color: var(--black); /* kolor fonta z modifajerem */
+    font-family:"Raleway" , sans-serif;
+    position: relative;
+    top: -21rem;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: .875rem;
+    padding: .625rem 1.875rem;
+    border: .0625rem solid var(--primary-color);
+    border-radius: 2.5rem;
+    transition: all 400ms;
+    display: inline-block;
+    cursor: pointer;
+    width: 15rem;
+    text-align: center;
+}
+
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: .0625rem solid var(--primary-color);
+}
+
+.btn-large {
+    font-size: 1rem;
+    padding: 1.375rem 3.4375rem;
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: .0625rem solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: .0625rem solid var(--primary-color);
+}
+
+.banner .banner__hdl {
+    font-size: 4rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+.banner .banner__lead {
+    font-weight: 400;
+    font-size: 1rem;
+    max-width: 65.375rem;
+    letter-spacing: 0;
+    margin-bottom: 2rem;
+    line-height: 1rem;
+    text-align: center;
+}
+
+.banner .banner__btn {}
+
+/*----------------- selectory do bloku statystyki*/
+
+.main {}
+
+.hdl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -28rem;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+}
+
+
+.hdl .hdl_text {
+    color: var(--black);
+    font-size: 2rem;
+    font-family: 'Raleway', 'Open Sans';
+    font-weight: 400;
+    margin-right: 0.3125rem;
+}
+
+.column {
+    /* 1352px to 84.5rem   -  szerosc strony max do 1352px*/
+    max-width: 70rem;
+    width: 100%;              /*  strona ma sie wyswietlac na 100% ekranu ale nie wiecej jak 1352px */
+    padding-inline: 1.25rem; /* inline padding to padding na lewy i prawy margines */
+    margin-inline: auto;      /* srodkowanie elementu */
+
+    /* wlączenie flexa dla klasy columns*/
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: row;
+
+    padding-bottom: 8rem;
+
+}
+
+.column .columns {
+    font-size: 1rem;
+    font-family: 'Raleway', 'Open Sans';
+    font-weight: 400;
+    margin-right:  0.3125rem;
+
+    /* wartosci do wysrodkowania icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+
+}
+
+.column .columns .icon_img {
+    position: absolute;
+    margin-left: 1.5rem;
+}
+
+
+.column .columns .kolo1 {
+    width: 3.625rem; /* Szerokość koła */
+    height: 3.625rem; /* Wysokość koła (musi być taka sama jak szerokość, aby uzyskać koło) */
+    background-color: var(--redish); /* Kolor tła koła (redish) */
+    border-radius: 50%; /* Ustawienie promienia zaokrąglenia na 50% (aby uzyskać koło) */
+}
+
+.column .columns .kolo2 {
+    width: 3.625rem; /* Szerokość koła */
+    height: 3.625rem; /* Wysokość koła (musi być taka sama jak szerokość, aby uzyskać koło) */
+    background-color: var(--dark-blue); /* Kolor tła koła (redish) */
+    border-radius: 50%; /* Ustawienie promienia zaokrąglenia na 50% (aby uzyskać koło) */
+}
+
+.column .columns .kolo3 {
+    width: 3.625rem; /* Szerokość koła */
+    height: 3.625rem; /* Wysokość koła (musi być taka sama jak szerokość, aby uzyskać koło) */
+    background-color: var(--green); /* Kolor tła koła (redish) */
+    border-radius: 50%; /* Ustawienie promienia zaokrąglenia na 50% (aby uzyskać koło) */
+}
+
+.column .columns .name_column {
+    color: var(--black);
+}
+
+.column .columns .text_column {
+    color: var(--grey-1);
+    margin-top: 0;
+}
+
+/* sekcja szara */
+
+.main2 {}
+
+.tlo {
+    background-color: var(--light-grey);
+    /* wlaczenie flexa dla klasy box - cel wyswietlanie w linie - pozimo  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 87.1875rem;
+    padding-top: 4rem;
+    adding-top: 4rem;
+    }
+
+.box {
+    max-width: 70rem; /* 1352px to 84.5rem   -  szerosc strony max do 1352px*/
+    height: 23.12rem;
+
+    display: flex;  /* dodajemy flexa na rodzicu  "header__inner" aby ustawic .menu ktore jest dziekiem tego znacznika + aby wszystko działało dodajemy 3 wartosci z flex fox justify-content: center;  align-items: center;  flex-direction: column; */
+    align-items: center;
+
+    border: 0.125rem solid var(--grey-1);
+    background-color: var(--white);
+    }
+
+.box .hdl_text {
+    font-size: 2rem;
+    font-family: 'Raleway', 'Open Sans';
+    font-weight: 400;
+    margin-right:  4.125rem;
+    margin-left: 4.125rem;
+    width: 50%;
+}
+
+
+.box .lead_text{
+    font-size: 1rem;
+    font-family: 'Raleway', 'Open Sans';
+    font-weight: 500;
+    margin-right:  4.125rem;
+    margin-left: 4.125rem;
+    line-height: 1.4;
+    width: 50%;
+}
+
+.box .line{
+    font-size: 1rem;
+    font-family: 'Raleway', 'Open Sans';
+    font-weight: 700;
+    margin-right:  4.125rem;
+
+    border-bottom: 0.25rem solid var(--redish);
+    width: 40%;
+    padding-top: 1rem;
+    margin-left: 4.125rem;
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between; /* Rozdziela elementy na lewą i prawą stronę */
+
+    max-width: 70rem; /* 1352px to 84.5rem   -  szerosc strony max do 1352px*/
+    text-align: left;
+}
+
+.inner .box {
+    flex: 1; /* Elastyczny podział miejsca, aby zająć dostępną przestrzeń */
+    background-color: var(--white); /* Dodaje tło do klasy "box" (opcjonalnie) */
+    display: block;
+}
+
+.inner .megafon {
+    flex: 1; /* Elastyczny podział miejsca, aby zająć dostępną przestrzeń */
+    background-color: var(--green); /* Dodaje tło do klasy "megafon" (opcjonalnie) */
+    text-align: center; /* Wyrównuje tekst i zawartość do prawej strony */
+    max-width: 30rem;
+}
+
+.inner .megafon .for_img {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50%;
+}
+
+.inner .megafon .for_img img {
+  max-width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.box .for_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ustawienie pozycji rodzica na relative */
+    width: 50%;
+}
+
+.box .for_img .img {
+    max-width: 100%;
+    position: absolute; /* Ustawienie pozycji obrazka na absolute */
+    z-index: 1; /* Ustalenie z-index, aby obrazek nachodził na inne elementy */
+    /* Możesz dostosować pozycję obrazka w zależności od twoich potrzeb: */
+
+    }
+
+.box .for_img .one {
+    margin-left: -15.5rem;
+    }
+
+.box .for_img .dwa {
+    width: 93%;
+    height: auto;
+}
+
+.box .for_img .cube {
+    /* parametry na cuba */
+    width: 10.75rem;                            /* Szerokość koła */
+    height: 10.75rem;     /* Wysokość koła (musi być taka sama jak szerokość, aby uzyskać koło) */
+    background-color: var(--redish);           /* Kolor tła koła (redish) */
+    border-radius: 2.5625rem;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: translateY(-2rem) rotate(45deg);
+    }
+
+
+    .box .for_img .kolo4 {
+        /* parametry na cuba */
+        width: 19.625rem;                            /* Szerokość koła */
+        height: 19.625rem;
+        background-color: var(--primary-color);                    /* Wysokość koła (musi być taka sama jak szerokość, aby uzyskać koło) */
+        border-radius: 10rem;
+    }
+
+.box .line .onex {
+    border-bottom: 0.25rem solid var(--redish); /* Kolor tła koła (redish) */
+}
+
+.box .dwax .line  {
+    border-bottom: 0.25rem solid var(--primary-color); /* Kolor tła koła (redish) */
+}
+
+.box .trzyx .line  {
+    border-bottom: 0.25rem solid var(--green);} /* Kolor tła koła (redish) */
+
